@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favico.png" type="image/png" sizes="40x40">
+
+    <title>Card api</title>
+</head>
+<body>
+    <centre><h1>Use of API</h1></centre>
+<h2>
+    param
+</h2>
+<b>n:</b>
+<pre>
+    N Is numeric of Card
+    such as 2,3,4,5,6,7,8,9
+    Note: King     => K 
+          Queen    => Q 
+          Jack     => J 
+          Acces(1) => A
+</pre>
+
+
+<b>s:</b>
+<pre>
+    S Is Symbolic of Card
+    such as Heart , spades , clubs ,Diamond
+    Note: Heart  (&hearts;)  => H
+          Spades (&spades;)  => S
+          Club   (&clubs;)  => C
+          Diamond(&diams;)  => D
+</pre>
+<h1>Two Param Need To Run </h1>
+<br><br>
+
+</body>
+<script src="../source.js"></script>
+<script>
+var url = new URL(window.location);
+var n = url.searchParams.get("n");
+var s = url.searchParams.get("s");
+var obj = {name:"" ,icon:"",img_url:"",unicode:"",svg_url:""}
+console.log(n,s);
+if(Boolean(n) & Boolean(s) ){
+    alert(11)
+    try{
+    obj.name = CardName[sim[n]][sim[s]];
+    obj.icon = uni_n[sim[n]][sim[s]];
+    obj.unicode = uni_n[sim[n]][sim[s]];
+    obj.img_url = "/img/"+n+s+".png"
+    obj.svg_url = "/img/"+n+s+".svg"
+    document.body.innerHTMl = " ";
+    document.body.innerText = " ";
+    document.write(JSON.stringify(obj))
+    } catch(err){
+        alert("pls use Right Param (erre) \n Parameter Error \n \n\t Pls Read Doc agin")
+    }
+
+}
+</script>
+
+</html>
