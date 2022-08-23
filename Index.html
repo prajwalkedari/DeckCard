@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Image</title>
+    <link rel="icon" href="cards.png" type="image/png" sizes="16x16">
+</head>
+<body>
+    <img id="img" src="img/back.png" >
+    <label for="N" id="NumC"></label><br>
+    <div id="detail">
+        <b id="cn"></b>
+        <p id="cs"></p>
+    </div>
+    <label for="S" id="SybN">Choose Cards :</label>
+    <select name="Symbol" onchange="getimg()" id="S">
+        <option value="H">Heart</option>
+        <option value="S">Spear</option>
+        <option value="D">Diamond</option>
+        <option value="C">Club</option>
+    </select>
+    <select name="Num"  onchange="getimg()" id="N">
+        <option value="A">Ace</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>        
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="0">10</option>
+        <option value="K">King</option>
+        <option value="Q">Queen</option>
+        <option accesskey="4" q="1" value="J">Jack</option>
+        <!-- <option value="X">Joker</option> -->
+    </select>
+
+<button id="btn" onclick="Det()">Show Details</button>
+
+</body>
+<script>
+    n = document.getElementById("N");
+    s = document.getElementById("S");
+    cn =document.getElementById("cn");
+    cs =document.getElementById("cs");
+    btn =document.getElementById("btn");
+
+    
+
+    img = document.getElementById("img");
+    function getimg() {
+        img.src ="img/"+n.value+s.value+".png"
+        console.log("img/"+n.value+s.value+".png")
+        // img.src ="img/3H.png" 
+        // alert(s.value)s
+        cn.innerText =CardName[sim[n.value]][sim[s.value]]; 
+        cs.innerText =  uni_n[sim[n.value]][sim[s.value]] + " => " + uni_s[sim[n.value]][sim[s.value]];
+        
+        // console.log(uni_s[1])
+    }
+
+    function getname(){
+
+
+    }
+
+
+    function Det() {
+  var x = document.getElementById("detail");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+    btn.innerText = "Hide Detail"
+  } else {
+    x.style.display = "none";
+    btn.innerText = "Show Detail"
+  } }
+</script>
+<script src="source.js"></script>
+
+</html>
