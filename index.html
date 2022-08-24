@@ -42,41 +42,36 @@
 
 </body>
 <script>
-    n = document.getElementById("N");
-    s = document.getElementById("S");
-    cn =document.getElementById("cn");
-    cs =document.getElementById("cs");
-    btn =document.getElementById("btn");
-
+    n = document.getElementById("N");  //Numeric Card
+    s = document.getElementById("S");  //Symbolic of Card
+    cn =document.getElementById("cn"); //Card Name Fetch From multiple dimensional array(var CardName) (source.js)
+    cs =document.getElementById("cs"); //Symbol with unicode Name Fetch From multiple dimensional array(var uni_s/_n) (source.js)
+    btn =document.getElementById("btn"); //Btn of show details
+    img = document.getElementById("img"); //For Img Src 
     
-
-    img = document.getElementById("img");
-    function getimg() {
-        img.src ="img/"+n.value+s.value+".png"
-        console.log("img/"+n.value+s.value+".png")
-        // img.src ="img/3H.png" 
-        // alert(s.value)s
-        cn.innerText =CardName[sim[n.value]][sim[s.value]]; 
-        cs.innerText =  uni_n[sim[n.value]][sim[s.value]] + " => " + uni_s[sim[n.value]][sim[s.value]];
-        
-        // console.log(uni_s[1])
+    
+    
+    function getimg() {  //call when onchange => N ,S
+    
+        img.src ="img/"+n.value+s.value+".png"; //New Image apply
+        cn.innerText =CardName[sim[n.value]][sim[s.value]]; //Card Name 
+        cs.innerText =  uni_n[sim[n.value]][sim[s.value]] + " => " + uni_s[sim[n.value]][sim[s.value]]; //Card symbol & unicode
+    
     }
-
     function getname(){
 
 
     }
-
-
-    function Det() {
-  var x = document.getElementById("detail");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-    btn.innerText = "Hide Detail"
-  } else {
-    x.style.display = "none";
-    btn.innerText = "Show Detail"
-  } }
+    function Det() { // call when onclick btn (work => show/hide Div#detail)
+        var x = document.getElementById("detail");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+            btn.innerText = "Hide Detail"
+        }else {
+            x.style.display = "none";
+            btn.innerText = "Show Detail";
+               } 
+    }
 </script>
 <script src="source.js"></script>
 
