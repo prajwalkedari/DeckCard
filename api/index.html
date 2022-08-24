@@ -43,20 +43,18 @@ var url = new URL(window.location);
 var n = url.searchParams.get("n");
 var s = url.searchParams.get("s");
 var obj = {name:"" ,icon:"",img_url:"",unicode:"",svg_url:""}
-console.log(n,s);
 if(Boolean(n) & Boolean(s) ){
-    alert(11)
     try{
-    obj.name = CardName[sim[n]][sim[s]];
-    obj.icon = uni_n[sim[n]][sim[s]];
-    obj.unicode = uni_n[sim[n]][sim[s]];
-    obj.img_url = "/img/"+n+s+".png"
-    obj.svg_url = "/img/"+n+s+".svg"
-    document.body.innerHTMl = " ";
-    document.body.innerText = " ";
-    document.write(JSON.stringify(obj))
+        obj.name = CardName[sim[n]][sim[s]];
+        obj.icon = uni_n[sim[n]][sim[s]];
+        obj.unicode = uni_n[sim[n]][sim[s]];
+        obj.img_url = "https://prajwalkedari.github.io/DeckCard/img/"+n+s+".png"
+        obj.svg_url = "https://prajwalkedari.github.io/DeckCard/img/"+n+s+".svg"
+        document.body.innerHTMl = " ";
+        document.body.innerText = " ";
+        document.write(JSON.stringify(obj))
     } catch(err){
-        alert("pls use Right Param (erre) \n Parameter Error \n \n\t Pls Read Doc agin")
+         alert("pls use Right Param (erre) \n Parameter Error \n \n\t Pls Read Doc agin")
     }
 
 }
